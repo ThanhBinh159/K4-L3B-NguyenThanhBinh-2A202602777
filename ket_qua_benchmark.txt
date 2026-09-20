@@ -1,0 +1,64 @@
+Corpus: 65 chunks từ 8 tài liệu
+Embedding: lexical_embed (stdlib)
+
+[1] Loại: số liệu
+Query: Sau khi Shopee chấp nhận hoàn tiền, tiền hoàn cho đơn thanh toán bằng thẻ tín dụng hoặc ghi nợ mất bao lâu?
+Filter: None
+Gold: Tiền được hoàn về thẻ tín dụng/ghi nợ trong 7–14 ngày làm việc, tùy theo ngân hàng.
+Expected doc: buyer-refund-timeline
+Top 1: buyer-refund-timeline | score=0.5803 | # Thời gian nhận tiền hoàn và cách kiểm tra tiền hoàn Sau khi gửi trả hàng, bạn sẽ nhận được thông báo xác nhận hoàn tiền qua mục Thông báo > Cập nhật đơn hàng trên ứng dụng Shopee, sau đó tiền sẽ được hoàn theo các phươ
+Top 2: buyer-refund-timeline | score=0.5490 | ## Bảng 1. Phương thức hoàn tiền và thời gian hoàn tiền | Phương thức thanh toán | Tiền hoàn trả được gửi qua | Thời gian nhận được tiền hoàn sau khi Shopee chấp nhận hoàn tiền | | --- | --- | --- | | Thanh toán khi nhận
+Top 3: buyer-refund-timeline | score=0.5265 | ## Lưu ý chung - Trong quá trình xử lý nếu Người bán có khiếu nại, Shopee sẽ xem xét và thông báo kết quả cuối cùng đến bạn tại mục Thông báo > Cập nhật đơn hàng trong vòng 3–5 ngày làm việc kể từ lúc tiếp nhận khiếu nại
+Expected in top-3: True
+Gold evidence in top-3: True
+Agent answer: | Thẻ tín dụng/ghi nợ | Thẻ tín dụng/ghi nợ | 7–14 ngày làm việc (tùy theo ngân hàng) | [2]
+
+[2] Loại: điều kiện
+Query: Nếu sản phẩm khác rõ ràng về chất liệu, màu sắc, thông số hoặc kiểu dáng so với mô tả thì có thể chọn lý do trả hàng nào?
+Filter: {'audience': 'buyer'}
+Gold: Có thể chọn lý do “Khác với mô tả”; lý do này áp dụng cho tất cả sản phẩm.
+Expected doc: buyer-return-eligibility
+Top 1: buyer-return-eligibility | score=0.3896 | ## 1. Điều kiện Trả hàng/Hoàn tiền của Shopee | Lý do | Trường hợp áp dụng | Điều kiện áp dụng | | --- | --- | --- | | Chưa nhận được hàng | Chưa nhận được gói hàng nhưng đã cập nhật giao hàng thành công trên ứng dụng ho
+Top 2: buyer-return-eligibility | score=0.3315 | ## 1. Điều kiện Trả hàng/Hoàn tiền của Shopee | Hàng giả/nhái | Sản phẩm có dấu hiệu làm giả/nhái sản phẩm thương hiệu nổi tiếng/đã được bảo hộ | Tất cả sản phẩm | | Đổi ý (Sản phẩm còn nguyên tem, nhãn mác, bao bì) | Sả
+Top 3: buyer-return-process | score=0.3024 | ## 5. Câu hỏi thường gặp Bạn có thể theo dõi tình trạng vận chuyển đơn hàng hoàn trả theo hướng dẫn dưới đây: **Đối với sản phẩm có nhãn Shopee Xử Lý:** theo dõi hành trình đơn hàng tại trang Chi tiết Trả hàng/Hoàn tiền 
+Expected in top-3: True
+Gold evidence in top-3: True
+Agent answer: | Khác với mô tả | Sản phẩm có sự khác biệt rõ ràng về chất liệu, màu sắc, thông số, kiểu dáng so với mô tả của người bán | Tất cả sản phẩm | [1]
+
+[3] Loại: quy trình
+Query: Nếu yêu cầu được chấp nhận theo phương án Trả hàng và Hoàn tiền, người mua cần làm gì và trong bao lâu?
+Filter: {'audience': 'buyer'}
+Gold: Người mua cần chọn hình thức trả hàng và hoàn tất gửi hàng về kho Shopee hoặc Người bán trong vòng 6 ngày kể từ khi nhận thông báo gửi trả hàng.
+Expected doc: buyer-return-process
+Top 1: buyer-return-process | score=0.5468 | ## 3. Phân loại phương án xử lý Trả hàng/Hoàn tiền của Shopee Trong trường hợp yêu cầu Trả hàng/Hoàn tiền của bạn được Shopee chấp nhận, tùy từng tính chất của sản phẩm hoặc đơn hàng, quyết định của Shopee sẽ bao gồm 1 t
+Top 2: buyer-return-eligibility | score=0.4965 | ## 2. Quy định chung về việc hoàn lại Mã giảm giá/Shopee Xu khi yêu cầu Trả hàng/Hoàn tiền - Voucher Shopee Live, Video Voucher, Voucher Người dùng mới Shopee, Voucher Người dùng mới Shopee Pay, Voucher Người dùng mới SP
+Top 3: buyer-return-eligibility | score=0.4604 | ## 1. Điều kiện Trả hàng/Hoàn tiền của Shopee ### 1.1. Nguyên tắc chung Shopee hiện chưa hỗ trợ yêu cầu đổi hàng. Nếu hàng nhận được có vấn đề (khác với mô tả, hư hỏng,...), bạn có thể từ chối nhận hàng khi đồng kiểm (đố
+Expected in top-3: True
+Gold evidence in top-3: True
+Agent answer: Trong trường hợp yêu cầu Trả hàng/Hoàn tiền của bạn được Shopee chấp nhận, tùy từng tính chất của sản phẩm hoặc đơn hàng, quyết định của Shopee sẽ bao gồm 1 trong 2 phương án sau: - **Hoàn Tiền Ngay:** bạn sẽ nhận được tiền hoàn mà không cần trả hàng. - **Trả hàng & Hoàn tiền:** bạn cần chọn hình thức trả hàng và hoàn tất việc gửi trả hàng về kho Shopee/Người bán trong vòng 6 ngày kể từ thời điểm nhận được thông báo gửi trả hàng từ Shopee. [1]
+
+[4] Loại: liệt kê
+Query: Hãy liệt kê các hình thức gửi hàng hoàn trả mà Shopee hướng dẫn cho người mua.
+Filter: {'audience': 'buyer'}
+Gold: Ba hình thức gồm: Đơn vị vận chuyển đến lấy hàng, Trả hàng tại bưu cục và Tự sắp xếp.
+Expected doc: buyer-return-shipping
+Top 1: buyer-return-shipping | score=0.5010 | # Các phương thức gửi hàng hoàn trả và phí hoàn trả
+Top 2: buyer-return-process | score=0.4373 | ## 3. Phân loại phương án xử lý Trả hàng/Hoàn tiền của Shopee Trong trường hợp yêu cầu Trả hàng/Hoàn tiền của bạn được Shopee chấp nhận, tùy từng tính chất của sản phẩm hoặc đơn hàng, quyết định của Shopee sẽ bao gồm 1 t
+Top 3: buyer-return-shipping | score=0.4213 | ## 2. Chính sách hỗ trợ phí trả hàng ### 2.1. Phí vận chuyển ban đầu khi yêu cầu Trả hàng/Hoàn tiền - Nếu bạn yêu cầu Trả hàng/Hoàn tiền cho tất cả sản phẩm trong đơn hàng đã đặt và được Shopee/Người bán đồng ý hoàn đầy 
+Expected in top-3: True
+Gold evidence in top-3: True
+Agent answer: - Nếu bạn trả hàng qua hình thức Đơn vị vận chuyển đến lấy hàng và Trả hàng tại bưu cục: bạn được miễn phí trả hàng. - Nếu bạn trả hàng qua hình thức Tự sắp xếp, bạn cần thanh toán trước phí trả hàng. Shopee sẽ hỗ trợ bạn phí trả hàng trong vòng 3–5 ngày làm việc (không kể Thứ 7, Chủ Nhật, Ngày lễ & Tết) cụ thể như sau: - **Đơn hàng thuộc Shopee Mall:** Shopee sẽ hoàn lại bạn khoản phí này sau khi yêu cầu trả hàng/hoàn tiền của bạn được chấp nhận. - **Đơn hàng không thuộc Shopee Mall:** Shopee sẽ hoàn lại khoản phí này dưới hình thức hoàn Shopee Xu sau khi yêu cầu Trả hàng/Hoàn tiền được chấp nhận hoàn tiền và đáp ứng đầy đủ các điều kiện hỗ trợ phí trả hàng, số xu hoàn trả cố định theo 2 trường hợp: - Cùng tỉnh/thành phố với Người bán: hoàn 25.000 Shopee Xu. - Khác tỉnh/thành phố với Người bán: hoàn 40.000 Shopee Xu. [3]
+
+[5] Loại: lọc metadata
+Query: Khi khiếu nại hàng hoàn có vấn đề, cần chuẩn bị những thông tin và bằng chứng nào?
+Filter: {'audience': 'seller'}
+Gold: Cần chuẩn bị lý do khiếu nại, thông tin đơn hàng, mã vận đơn hoặc thông tin vận chuyển, hình ảnh kiện hàng, video mở kiện, hình ảnh sản phẩm ban đầu nếu có và bằng chứng thể hiện hàng hoàn bị sai, thiếu, vỡ hoặc không nguyên vẹn.
+Expected doc: seller-refund-appeal
+Top 1: seller-refund-appeal | score=0.5863 | ## 5. Thông tin Người bán nên chuẩn bị Khi gửi khiếu nại, Người bán nên chuẩn bị đầy đủ: - Lý do khiếu nại rõ ràng. - Thông tin đơn hàng. - Mã vận đơn hoặc thông tin vận chuyển. - Hình ảnh tình trạng kiện hàng. - Video m
+Top 2: seller-return-evidence | score=0.5336 | ## E. Nguyên tắc chung khi cung cấp bằng chứng Để tăng khả năng khiếu nại được chấp nhận, Người bán nên bảo đảm: - Bằng chứng liên quan trực tiếp đến đơn hàng. - Mã đơn hoặc mã vận đơn xuất hiện rõ ràng. - Video được qua
+Top 3: seller-refund-appeal | score=0.4369 | ## 2. Trường hợp Shopee quyết định Trả hàng và Hoàn tiền Sau khi Shopee cho phép Người mua trả lại hàng để được hoàn tiền, Người bán có quyền khiếu nại trong các trường hợp sau: - Người bán không nhận được hàng hoàn trả 
+Expected in top-3: True
+Gold evidence in top-3: True
+Agent answer: Khi gửi khiếu nại, Người bán nên chuẩn bị đầy đủ: - Lý do khiếu nại rõ ràng. - Thông tin đơn hàng. - Mã vận đơn hoặc thông tin vận chuyển. - Hình ảnh tình trạng kiện hàng. - Video mở kiện hàng hoàn trả. - Hình ảnh sản phẩm đã gửi ban đầu, nếu có. - Bằng chứng cho thấy hàng hoàn bị sai, thiếu, vỡ hoặc không nguyên vẹn. [1]
+
+Kết quả: 5/5 query có đúng chunk chứa gold evidence trong top-3

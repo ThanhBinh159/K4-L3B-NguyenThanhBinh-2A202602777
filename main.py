@@ -21,12 +21,14 @@ from src.models import Document
 from src.store import EmbeddingStore
 
 SAMPLE_FILES = [
-    "data/python_intro.txt",
-    "data/vector_store_notes.md",
-    "data/rag_system_design.md",
-    "data/customer_support_playbook.txt",
-    "data/chunking_experiment_report.md",
-    "data/vi_retrieval_notes.md",
+    "data/refund/buyer-refund-timeline.md",
+    "data/refund/buyer-return-eligibility.md",
+    "data/refund/buyer-return-process.md",
+    "data/refund/buyer-return-shipping.md",
+    "data/refund/return-refund-policy.md",
+    "data/refund/seller-refund-appeal.md",
+    "data/refund/seller-return-evidence.md",
+    "data/refund/seller-return-process.md",
 ]
 
 
@@ -127,6 +129,8 @@ def run_manual_demo(question: str | None = None, sample_files: list[str] | None 
 
 
 def main() -> int:
+    if hasattr(sys.stdout, "reconfigure"):
+        sys.stdout.reconfigure(encoding="utf-8")
     question = " ".join(sys.argv[1:]).strip() if len(sys.argv) > 1 else None
     return run_manual_demo(question=question)
 
